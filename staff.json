@@ -34,6 +34,43 @@
         "state": "OR",
         "postalCode": "97201",
         "icon": "Blue.png"
+    },
+    {
+        "name" : "Victoria" ,
+        "url": "http://www.w3schools.com/css/default.asp",
+        "address" : "8085 SW Landeau St",
+        "city" : "Portland",
+        "state": "OR",
+        "postalCode": "97223",
+        "icon": "Yellow.png"
+    },
+    {
+        "name" : "My Optic" ,
+        "url": "http://www.w3schools.com/css/default.asp",
+        "address" : "3978 N Williams Ave",
+        "city" : "Portland",
+        "state": "OR",
+        "postalCode": "97227",
+        "icon": "Yellow.png"
+    },
+    {
+        "name" : "Carlene" ,
+        "url": "http://www.w3schools.com/css/default.asp",
+        "address" : "3303 NE 7TH Avenue",
+        "city" : "Portland",
+        "state": "OR",
+        "postalCode": "97212",
+        "icon": "Yellow.png"
+    },
+    {
+        "name" : "Carmen" ,
+        "url": "http://www.w3schools.com/css/default.asp",
+        "address" : "15234 Sw Burgundy",
+        "city" : "Tigard",
+        "state": "OR",
+        "postalCode": "97223",
+        "icon": "Yellow.png"
     }
+
 
 ]
