@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body, #map_canvas { margin: 0; padding: 0; height: 100%; }
+        </style>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=visualization">
+        </script>
+        
+        <script>
+        
+            var map;
+            var markers = new Array();
+
+
+			function AutoCenter()
+			{
+				//  Create a new viewpoint bound
+				var bounds = new google.maps.LatLngBounds();
+				var markerLength = markers.length ;
+				//  Go through each...
+				for (var i = 0 ; i < markerLength ; i ++)
+				{
+					bounds.extend(markers[i].position);
+				}
+				//  Fit these bounds to the map
+				map.fitBounds(bounds);
+/*				
+				center =  new google.maps.LatLng(40.645962, -111.888747);
+				for (var x = 3 ; x < 15 ; x +=3)
+				{
+					var populationOptions = {
+	      				strokeColor: '#FF0000',
+				      	strokeOpacity: 0.8,
+				      	strokeWeight: 2,
+						fillColor: '#FF0000',
+						fillOpacity: 0,
+						map: map,
+						center: center,
+						radius: x*1000
+				    };
+				    // Add the circle for this city to the map.
+			    	cityCircle = new google.maps.Circle(populationOptions);
+				}
+*/				
+			}
+
+            function initialize()
+            {
+                var mapOptions = 
+                {
+              		  zoom: 11,
+              		  center: new google.maps.LatLng(2.8,-187.3),
+              		  mapTypeId: google.maps.MapTypeId.ROADMAP,
+              		  mapTypeControl: false,
+      				  streetViewControl: false,
+      				  panControl: false,
+      				  zoomControlOptions: {
+         				position: google.maps.ControlPosition.RIGHT_BOTTOM
+         			  }
+                };
+                map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+                var script = document.createElement('script');
+                script.src = 'http://127.0.0.1/NAKSHA/staff.json';  
+                document.getElementsByTagName('head')[0].appendChild(script);
+             }
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+            window.eqfeed_callback = function(results) {
+                for (var i = 0; i < results.features.length; i++)
+                {
+                    var name       = results.features[i].properties.name ;
+                    var address    = results.features[i].properties.address ;
+                    var city       = results.features[i].properties.city ;
+                    var state      = results.features[i].properties.state ;
+                    var postalCode = results.features[i].properties.postalCode;
+                    var averyLabel = name + "\r\n" + address + "\r\n" + city + ", " + state + ' ' + postalCode ;
+                    var icon       = 'images/' + results.features[i].properties.icon ;
+                    var latitude   = results.features[i].properties.latitude ;
+                    var longitude  = results.features[i].properties.longitude ;
+                    var latLng  = new google.maps.LatLng(latitude,longitude);
+                    console.log(name) ;
+                  
+                    var marker  = new google.maps.Marker({
+                                    position: latLng,
+                                    map: map,
+                                    title: averyLabel,
+                                    icon : icon
+                                  });
+					markers.push(marker);
+
+                  
+                }
+                AutoCenter() ;
+            }
+        </script>
+    </head>
+    <body onload="initialize()">
+        <div id="map_canvas"></div>
+    </body>
+</html>

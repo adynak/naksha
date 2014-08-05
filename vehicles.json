@@ -1,0 +1,60 @@
+eqfeed_callback(
+{
+    "features": [
+        {
+            "properties": {
+                "name": "MCLAREN,KIRSTY J",
+                "address": "7050 S CHERRY TREE LN",
+                "city": "SALT LAKE CITY",
+                "state": " UT",
+                "postalCode": "84121",
+                "icon": "Yellow.png",
+                "latitude": 40.622735,
+                "longitude": -111.841006,
+                "year":2014,
+                "make": "Volvo",
+                "model": "V60",
+                "dealType":"purchase",
+                "financed":"Wells Fargo",
+                "price":"45,000.00"
+            }
+        },
+        {
+            "properties": {
+                "name": "WHITMAN,STEPHEN S",
+                "address": "2130 PINNACLE TERR #106",
+                "city": "SALT LAKE CITY",
+                "state": " UT",
+                "postalCode": "84121",
+                "icon": "Yellow.png",
+                "latitude": 40.60967,
+                "longitude": -111.831816,
+                "year":2014,
+                "make": "Volvo",
+                "model": "V60",
+                "dealType":"purchase",
+                "financed":"Wells Fargo",
+                "price":"45,000.00"
+
+            }
+        },
+        {
+            "properties": {
+                "name": "LARRY H. MILLER LEXUS",
+                "address": "5701 SO. STATE STREET",
+                "city": "MURRAY",
+                "state": " UT",
+                "postalCode": "84107",
+                "icon": "Blue.png",
+                "latitude": 40.645962,
+                "longitude": -111.888747,
+                "year":"",
+                "make": "",
+                "model": "",
+                "dealType":"",
+                "financed":"",
+                "price":""
+            }
+        }
+    ]
+});
