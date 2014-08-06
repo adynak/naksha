@@ -22,7 +22,22 @@ var scotchApp = angular.module('scotchApp', ['ngRoute']);
 				controller  : 'contactController'
 			});
 	});
-
+	
+	var initializeFilters = function(filterList)
+	{
+		var filterDefault={};
+		var index;
+		for (var data in filterList){
+			filterDefault[data] = {};
+			
+			for(index=0;index<data.length;++index){
+				//console.log(filterList[data][index]);
+				filterDefault[filterList[data][index]] = true; 	
+			}
+		}
+		console.log(filterDefault);
+	return filterDefault;	
+	}
 	// create the controller and inject Angular's $scope
 	scotchApp.controller('mainController', function($scope) {
 		// create a message to display in our view
