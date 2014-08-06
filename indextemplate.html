@@ -9,7 +9,8 @@
 	  <script src="scripts/angular.js"></script>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	  <script src="scripts/script.js"></script>
-	  <script src="scripts/bootstrap.js" />
+	  <script src="scripts/bootstrap.js"></script>
+	  <script src="scripts/jq.js"></script>
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
 	</head>
 
@@ -29,14 +30,14 @@
 		
 			<div id="splash_buttons" class="col-lg-12" style="padding:5% 0 0 0; height:50%;">
 			
-				<div id="button_1" class="col-lg-2 text-center col-lg-offset-3 btn btn-lg btn-primary" >
+				<div id="vehicle_btn" class="col-lg-2 text-center col-lg-offset-3 btn btn-lg btn-primary" >
 					<img src="images/car_BW_icon.png" class="img-rounded" width="60" height="60" >
 					<h3 id="map_1">
 					Vehicles
 					</h3>
 				</div>
 			
-				<div id="button_2" class="col-lg-2 text-center col-lg-offset-2 btn btn-lg btn-primary">
+				<div id="employee_btn" class="col-lg-2 text-center col-lg-offset-2 btn btn-lg btn-primary">
 					<img src="images/person_icon.png" class="img-rounded" width="60" height="60">
 					<h3 id="map_2">
 					Employees
@@ -44,7 +45,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="main_page">
+		<div id="main_page" class="hidden">
 			<div id="main_nav" class="row" >
 				<div id="site_title" class="col-lg-3 label label-success" style="padding:10px 0px; font-size:30px">
 				Naksha
@@ -61,11 +62,11 @@
 					
 				</div>
 				<div class="tab-content col-lg-9">
-					<div id="vehicles_map" class="tab-pane active ">
-						<iframe src="vehicles.html" style="width:100%; height:100%;"> </iframe>
+					<div id="vehicles_map" class="tab-pane active col-lg-12 ">
+						<iframe src="vehicles.html" style="width:100%; height:95%;"> </iframe>
 					</div>
-					<div id="employees_map" class="tab-pane">
-						<iframe src="staff.html" style="width:100%; height:100%;"> </iframe>
+					<div id="employees_map" class="tab-pane col-lg-12">
+						<iframe src="staff.html" style="width:100%; height:95%;"> </iframe>
 					</div>
 				</div>
 			</div>
