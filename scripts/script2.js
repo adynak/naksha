@@ -40,8 +40,6 @@ var scotchApp = angular.module('scotchApp', ['ngRoute']);
 		console.log(filterDefault);
 		return filterDefault;	
 	}
-	
-	
 	// create the controller and inject Angular's $scope
 	scotchApp.controller('mainController', function($scope) {
 		// create a message to display in our view
@@ -53,7 +51,6 @@ var scotchApp = angular.module('scotchApp', ['ngRoute']);
 
 	scotchApp.controller('aboutController', function($scope) {
 		$scope.message = 'Look! I am an about page.';
-		var filters = initializeFilters(sales);
 	});
 
 	scotchApp.controller('contactController', function($scope) {
