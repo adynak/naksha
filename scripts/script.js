@@ -27,12 +27,14 @@ var scotchApp = angular.module('scotchApp', ['ngRoute']);
 	{
 		var filterDefault={};
 		var index;
+		//console.log(filterList);
 		for (var data in filterList){
 			filterDefault[data] = {};
-			
-			for(index=0;index<data.length;++index){
-				//console.log(filterList[data][index]);
-				filterDefault[filterList[data][index]] = true; 	
+			filterDefault[data]["displayLabel"]=filterList[data]["displayLabel"];
+			filterDefault[data]["values"]={};
+			for(index=0;index<filterList[data]["values"].length;++index){
+			//	console.log(filterList[data][index]);
+				filterDefault[data]["values"][filterList[data]["values"][index]] = true; 	
 			}
 		}
 		console.log(filterDefault);

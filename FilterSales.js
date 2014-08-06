@@ -1,31 +1,48 @@
 var sales = 
 {
-"CITY": [
-	"portland","salem","eugene"
-	],
-"STATE":[
-	"OR","CA","TX"
-	],
-"ZIP CODE":[
-	"97330","97335","97256"
-	],
-"YEAR":[
-	"2012","2013","2014"
-	],
-"MAKE":[
-	"volvo","ford","chevy"
-	],
-"MODEL":[
-	"v60","escape","tercel"
-	],
-"DEAL TYPE":[
-	"purchase","lease","undefined"
-	],
-"FINANCE":[
-	"wellsfargo","chase","USbank"
-	],
-"PRICE":[
-
-	"45,000.00","60,000.00","24,000.00"
+"city":{ 
+	"displayLabel":"City",
+	"values":["portland","salem","eugene"
 	]
+},
+"state":{
+"displayLabel":"State",
+	"values":["OR","CA","TX"
+	]
+},
+"postalCode":{
+"displayLabel":"Zip Code",
+	"values":["97330","97335","97256"
+	]
+},
+"year":{
+"displayLabel":"Year",
+	"values":["2012","2013","2014"
+	]
+},
+"make":{
+	"displayLabel":"Make",
+	"values":["volvo","ford","chevy"
+	]
+},
+"model":{
+"displayLabel":"Model",
+	"values":["v60","escape","tercel"
+	]
+},
+"dealType":{
+"displayLabel":"Deal Type",
+	"values":["purchase","lease","undefined"
+	]
+},
+"financed":{
+"displayLabel":"Finance",
+	"values":["wellsfargo","chase","USbank"
+	]
+},
+"price":{
+"displayLabel":"Price",
+	"values":["45,000.00","60,000.00","24,000.00"
+	]
+}
 }
