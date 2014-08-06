@@ -30,9 +30,11 @@
 				position: google.maps.ControlPosition.RIGHT_BOTTOM
 			  }
 		};
+		console.log("about to create map object");
 		map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+		console.log("made map object");
 	 }
-
+		initialize();
 // Loop through the results array and place a marker for each
 // set of coordinates.
 	window.eqfeed_callback = function(results) {
