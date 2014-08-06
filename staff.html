@@ -11,6 +11,7 @@
         <script>
         
             var map;
+			var infoWindow;
             var markers = new Array();
 			function AutoCenter()
 			{
@@ -58,7 +59,7 @@
          				position: google.maps.ControlPosition.RIGHT_BOTTOM
          			  }
                 };
-				var infowindow = new google.maps.InfoWindow({
+				 infowindow = new google.maps.InfoWindow({
 				      content: "hello"
 				  });
 				  
