@@ -7,6 +7,7 @@
 	  <!-- SPELLS -->
 	  <!-- load angular via CDN -->
 	  <script src="scripts/angular.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script
 	  <script src="scripts/script.js"></script>
 	  <script src="scripts/bootstrap.js" />
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
@@ -45,24 +46,27 @@
 		</div>
 		<div id="main_page">
 			<div id="main_nav" class="row" >
-				<div id="site_title" class="col-lg-3 label label-success" style="padding:10px 0px;">
+				<div id="site_title" class="col-lg-3 label label-success" style="padding:10px 0px; font-size:30px">
 				Naksha
 				</div>
-				<div class="col-lg-9 row">
-					<div class="label label-info col-lg-6" >
-						Vehicles
-					</div>
-					<div class="label label-success col-lg-6" >
-						Personal
-					</div>
+				<div class="tabbable">
+					<ul class="nav nav-tabls">
+						<li class="active"><a href="#vehicles_map" data-toggle="tab">Vehicles</a></li>
+						<li><a href="#employees_map" data-toggle="tab">Employees</a></li>
+					</ul>
 				</div>
 			</div>
 			<div id="main_content" class="row">
 				<div id="filter" class="col-lg-3">
 					filter goes here
 				</div>
-				<div id="map" class="col-lg-9">
-					<iframe src="vehicles.html" style="width:100%; height:100%;"> </iframe>
+				<div class="tab-content">
+					<div id="vehicles_map" class="col-lg-9 tab-pane active">
+						<iframe src="vehicles.html" style="width:100%; height:100%;"> </iframe>
+					</div>
+					<div id="employees_map" class="tab-pane">
+						<iframe src="staff.html" style="width:100%; height:100%;"> </iframe>
+					</div>
 				</div>
 			</div>
 
