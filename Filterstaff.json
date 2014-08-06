@@ -1,0 +1,12 @@
+"staff": [
+{
+"city": {
+	"portland","salem","eugene"
+},
+"state":{
+	"OR","CA","TX"
+},
+"zipcode":{
+	"97330","97335","97256"
+}
+}];

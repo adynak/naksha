@@ -1,0 +1,31 @@
+var sales = 
+[
+{
+"city": {
+	"portland","salem","eugene"
+},
+"state":{
+	"OR","CA","TX"
+},
+"zipcode":{
+	"97330","97335","97256"
+},
+"year":{
+	"2012","2013","2014"
+},
+"make":{
+	"volvo","ford","chevy"
+},
+"model":{
+	"v60","escape","tercel"
+},
+"dealType":{
+	"purchase","lease","undefined"
+},
+"financed":{
+	"wellsfargo","chase","USbank"
+},
+"price":{
+	"45,000.00","60,000.00","24,000.00"
+}
+}];
