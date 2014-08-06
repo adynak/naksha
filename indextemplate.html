@@ -19,9 +19,10 @@
 	<body ng-controller="mainController" class="container">
 		<div id="splash_page" class="col-lg-12">
 	
-			<div id="splash_map" class="col-lg-8 text-center col-lg-offset-2" style="background-image:url('images/Google-Maps-USA.png')">
-
-				<h1 id="naksha_title">
+			<div id="splash_map" class="col-lg-8 text-center col-lg-offset-2" >
+				<div id="spash_map"  style="background: rgba(0,0,0,0.5) url('images/us_map.gif') no-repeat 50% 0%; height:100%; width:100%; position:absolute; z-index:-100">
+				</div>
+				<h1 id="naksha_title" style="background-color:blue; margin:20% 0% ; z-index:100">
 				NAKSHA
 				</h1>
 			</div>
@@ -45,13 +46,15 @@
 		</div>
 		<div id="main_page">
 			<div id="main_nav" class="row">
-				<div id="site_title" class="col-lg-3">
-			
+				<div id="site_title" class="col-lg-3 label label-success">
+				Naksha
 				</div>
-				<div class="col-lg-9">
-					<div >
+				<div class="col-lg-9 row">
+					<div style="background-color:coral">
+						Vehicles
 					</div>
-					<div>
+					<div style="background-color:coral">
+						Personal
 					</div>
 				</div>
 			</div>

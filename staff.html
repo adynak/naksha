@@ -12,8 +12,6 @@
         
             var map;
             var markers = new Array();
-
-
 			function AutoCenter()
 			{
 				//  Create a new viewpoint bound
@@ -60,12 +58,17 @@
          				position: google.maps.ControlPosition.RIGHT_BOTTOM
          			  }
                 };
+				var infowindow = new google.maps.InfoWindow({
+				      content: "hello"
+				  });
+				  
                 map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
+	  		  	
                 var script = document.createElement('script');
-                script.src = 'http://127.0.0.1/NAKSHA/staff.json';  
+                script.src = 'staff.json';  
                 document.getElementsByTagName('head')[0].appendChild(script);
              }
+		  
 
       // Loop through the results array and place a marker for each
       // set of coordinates.
@@ -92,7 +95,9 @@
                                   });
 					markers.push(marker);
 
-                  
+		  		  	google.maps.event.addListener(marker, 'click', function() {
+		  		      infowindow.open(map,marker);
+				});
                 }
                 AutoCenter() ;
             }
