@@ -12,34 +12,34 @@
 	</head>
 
 	<header>
-		<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/">Angular Routing Example</a>
-			</div>
-
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-				<li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-				<li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-			</ul>
-		</div>
-		</nav>
+	
 	</header>
 	<!-- define angular controller -->
 	<body ng-controller="mainController">
-
-	...
-
-	<!-- MAIN CONTENT AND INJECTED VIEWS -->
-	<div id="main">
-		{{ message }}
-		<div ng-view>
-		
+	<div id="splash_page" class="span12">
+	
+		<div id="splash_map" class="span8" class="row">
+			<div id="map_image">
+			</div>
+			<h1 id="naksha_title">
+			</h1>
 		</div>
-
-		<!-- angular templating -->
-		<!-- this is where content will be injected -->
+		
+		<div id="splash_buttons" class="span6">
+			<div id="button_1" class="span2">
+				<h3 id="map_1">
+				</h3>
+			</div>
+			
+			<div id="button_2" class="span2">
+				<h3 id="map_2">
+				</h3>
+			</div>
+		</div>
 	</div>
+	
+	</body>
+
+
 </html>
  
