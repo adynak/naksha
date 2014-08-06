@@ -2,47 +2,47 @@ var sales =
 {
 "city":{ 
 	"displayLabel":"City",
-	"values":["portland","salem","eugene"
+	"values":["BATON ROUGE","BOGUE CHITTO","BROOKHAVEN","JAYESS","LIBERTY","MAGNOLIA","MCCOMB","SUMMIT","TYLERTOWN"
 	]
 },
 "state":{
 "displayLabel":"State",
-	"values":["OR","CA","TX"
+	"values":["LA","MS"
 	]
 },
 "postalCode":{
 "displayLabel":"Zip Code",
-	"values":["97330","97335","97256"
+	"values":["39601-3680","39648","39648-5428","39652","39666","39667","70806","70806-4707"
 	]
 },
 "year":{
 "displayLabel":"Year",
-	"values":["2012","2013","2014"
+	"values":["2000","2001","2003","2004","2005","2006","2007","2008","2009","2010"
 	]
 },
 "make":{
 	"displayLabel":"Make",
-	"values":["volvo","ford","chevy"
+	"values":["BUICK","CADILLAC","CHEVROLET","DODGE","FORD","GMC","NISSAN","PONTIAC","TOYOTA"
 	]
 },
 "model":{
 "displayLabel":"Model",
-	"values":["v60","escape","tercel"
+	"values":["COBALT","CTS","IMPALA","MALIBU","SILVERADO 1500","SILVERADO 2500","SILVERADO 3500","SUBURBAN","TAHOE"
 	]
 },
 "dealType":{
 "displayLabel":"Deal Type",
-	"values":["purchase","lease","undefined"
+	"values":["Purchase","Lease"
 	]
 },
 "financed":{
 "displayLabel":"Finance",
-	"values":["wellsfargo","chase","USbank"
+	"values":["AC","ALLYMS","CASH","CITIZENS","CMB","CMBSP","FB","GM","GML","MFCU","NONE","PCNB","REG","TRNB"
 	]
 },
 "price":{
 "displayLabel":"Price",
-	"values":["45,000.00","60,000.00","24,000.00"
+	"values":["50,000.00","40,000.00","30,000.00","20,000","10,000","5,000","0"
 	]
 }
 }
