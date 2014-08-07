@@ -6223,8 +6223,43 @@ button.close {
 		
 	}
 	#content_map_div{
-		padding-right:0px;
+		padding-right:20px !important;
 	}
+	input[type=checkbox]
+		{
+		-ms-transform: scale(3); /* IE */
+		-moz-transform: scale(3); /* FF */
+		-webkit-transform: scale(3); /* Safari and Chrome */
+		-o-transform: scale(3); /* Opera */
+		padding: 5px;
+		magin: 5px 10px;
+		}
+	
+	span{
+		padding:20px 0px !important;
+		font-size:25px;
+		margin-left: 20px;
+	}
+	#splash_buttons{
+		padding:15% !important;
+	}
+	#splash_map{
+		background-size:98% 100% !important;
+		height: 100px !important;
+	}
+	div.panel-body  > div.ng-scope{
+		padding:10px !important;
+		margin:0px 15px !important;
+	}
+	#vehicle_btn{
+		width : 100% !important;
+		margin : 10px !important;
+	}
+	#employee_btn{
+		width : 100% !important;
+		margin : 10px !important;
+	}
+	
 	
 }
 
