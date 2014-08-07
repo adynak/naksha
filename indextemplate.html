@@ -62,7 +62,7 @@
 			</div>
 			<div id="main_content" class="row">
 				<div id="filter" class="col-lg-3">
-					
+					<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>
 				</div>
 				<div class="tab-content col-lg-9 " style="padding-left:0px">
 					<div id="vehicles_map" class="tab-pane col-lg-12 ">
