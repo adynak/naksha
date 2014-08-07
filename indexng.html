@@ -1,8 +1,5 @@
 <html ng-app="scotchApp">
 	<head>
-	        <style>
-            html, body, #map_canvas { margin: 0; padding: 0; height: 100%; }
-        </style>
 	  <!-- SCROLLS -->
 	  <!-- load bootstrap and fontawesome via CDN -->
 	  <link rel="stylesheet" href="css/bootstrap.css" />
@@ -13,6 +10,9 @@
 	  <script src="scripts/angular.js"></script>
 	  <script src="https://maps.googleapis.com/maps/api/js?libraries=visualization"></script>
 	  <script src="FilterSales.js"></script>
+	 
+	 
+	  <script src="vehicles.json"></script>
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
 	   <script src="scripts/script.js"></script>
 	</head>
@@ -71,7 +71,7 @@
                 map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
                 var script = document.createElement('script');
-                script.src = 'vehicles.json';  
+                script.src = 'http://127.0.0.1/NAKSHA/vehicles.json';  
                 document.getElementsByTagName('head')[0].appendChild(script);
              }
 
@@ -132,11 +132,10 @@
 	<!-- define angular controller -->
 	<body ng-controller="mainController" onload="initialize()">
 
-	
+	...
 
 	<!-- MAIN CONTENT AND INJECTED VIEWS -->
 	<div id="main">
-		<div id="map_canvas"></div>
 		{{ message }}
 		<div ng-view>
 		

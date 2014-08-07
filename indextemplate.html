@@ -13,6 +13,7 @@
 	  <script src="scripts/jq.js"></script>
 
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+	  <script src="FilterSales.js"></script>
 	  <script src="scripts/script.js"></script>
 	</head>
 
@@ -49,13 +50,13 @@
 		</div>
 		<div id="main_page" class="hidden">
 			<div id="main_nav" class="row" >
-				<div id="site_title" class="col-lg-3 label label-success" style="padding:10px 0px; font-size:30px">
+				<div id="site_title" class="col-lg-3 label label-primary" style="padding:10px 0px; font-size:30px">
 				Naksha
 				</div>
 				<div class="tabbable col-lg-9">
-					<ul class="nav nav-tabls">
-						<li class="active col-lg-6"><a href="#vehicles_map" data-toggle="tab">Vehicles</a></li>
-						<li class="col-lg-6"><a href="#employees_map" data-toggle="tab">Employees</a></li>
+					<ul class="nav nav-tabs">
+						<li id="vehicle_map_tab" class="col-lg-4"><a href="#vehicles_map" data-toggle="tab">Vehicles</a></li>
+						<li id="employee_map_tab" class="col-lg-4"><a href="#employees_map" data-toggle="tab">Employees</a></li>
 					</ul>
 				</div>
 			</div>
@@ -64,7 +65,7 @@
 					
 				</div>
 				<div class="tab-content col-lg-9">
-					<div id="vehicles_map" class="tab-pane active col-lg-12 ">
+					<div id="vehicles_map" class="tab-pane col-lg-12 ">
 						<iframe src="vehicles.html" style="width:100%; height:95%;"> </iframe>
 					</div>
 					<div id="employees_map" class="tab-pane col-lg-12">

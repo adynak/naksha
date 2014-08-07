@@ -47,13 +47,13 @@ var scotchApp = angular.module('scotchApp', ['ngRoute']);
 		// create a message to display in our view
 		$scope.message = 'Everyone come and see how good I look!';
 		//initialize();
-		
+		$scope.filters = initializeFilters(sales);
 		
 	});
 
 	scotchApp.controller('aboutController', function($scope) {
 		$scope.message = 'Look! I am an about page.';
-		$scope.filters = initializeFilters(sales);
+		
 	});
 
 	scotchApp.controller('contactController', function($scope) {
