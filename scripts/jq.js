@@ -14,18 +14,18 @@ $(document).ready(function(){
 	});
 
 	$(".filter-btn-select-all").click(function(){
-		$(this).parent().siblings().children("input").prop('checked',true);
+		//$(this).parent().siblings().children("input").attr('checked', true);
 	});
 	
 	$(".filter-btn-clear-all").click(function(){
-		$(this).parent().siblings().children("input").prop('checked', false);
+		//$(this).parent().siblings().children("input").attr('checked', false);
 	});
 	
 	$("#filter-all-btn-select-all").click(function(){
-		$(document).find("input").prop('checked', true);
+		//$(document).find("input").attr('checked', true);
 	});
 	
 	$("#filter-all-btn-clear-all").click(function(){
-		$(document).find("input").prop('checked', false);
+		//$(document).find("input").attr('checked', false);
 	});
 });

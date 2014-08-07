@@ -15,9 +15,7 @@
 
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
 	  <script src="FilterSales.js"></script>
-	  <script src="FilterStaff.js"></script>  
-	  
-	  
+	  <script src="FilterStaff.js"></script>
 	</head>
 
 	<header>
@@ -76,8 +74,8 @@
 							</div>
 							</accordion-heading>
 							<div class ="col-md-12 container-fixed" style="padding:0px 0px 5px 0px"> 
-								<button class="filter-btn-select-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 55px;">Select All</button>
-								<button class="filter-btn-clear-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 20px;">Select None</button>
+								<button class="filter-btn-select-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 55px;" ng-click="setOne(criteriaName,true)">Select All</button>
+								<button class="filter-btn-clear-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 20px;" ng-click="setOne(criteriaName,false)">Select None</button>
 							</div>
 							<div ng-repeat="(option,val) in criteriaName.values">
 								<input type="checkbox" ng-model="criteriaName.values[option]"><span ng-click="criteriaName.values[option]=!criteriaName.values[option]">&nbsp;{{option}}</span><br/>
@@ -86,15 +84,15 @@
 						</accordion-group>
 					</accordion>
 					<div >
-						<div class="col-md-12 container-fixed" id="all-btn-box" style="margin-bottom:25px">
-						<button id="filter-all-btn-select-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;">Select All</button>
-						<button id="filter-all-btn-clear-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;">Clear All</button>
+						<div class="col-md-12 container-fixed" style="margin-bottom:25px">
+						<button id="filter-all-btn-select-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;" ng-click="setAll(true)">Select All</button>
+						<button id="filter-all-btn-clear-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;" ng-click="setAll(false)">Clear All</button>
 						</div>
 					<button ng-click="reloadMap()" class="btn-block btn-primary text-center " style="padding:10px;">Update Map</button>
 
 					</div>
 				</div>
-				<div id="content_map_div" class="tab-content col-md-9 " style="padding-left:0px">
+				<div class="tab-content col-md-9 " style="padding-left:0px">
 					<div id="vehicles_map" class="tab-pane col-md-12 ">
 						<iframe id='vframe' src="vehicles.html" style="width:100%; height:92%;"> </iframe>
 					</div>
