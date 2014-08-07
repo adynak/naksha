@@ -11,6 +11,7 @@
 	  <script src="scripts/script.js"></script>
 	  <script src="scripts/bootstrap.js"></script>
 	  <script src="scripts/jq.js"></script>
+	  <script src="scripts/ui-bootstrap-tpls-0.11.0.js"></script>
 
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
 	  <script src="FilterSales.js"></script>
@@ -61,7 +62,14 @@
 			</div>
 			<div id="main_content" class="row">
 				<div id="filter" class="col-lg-3">
-					<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>
+					<!--<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>-->
+					<accordion>
+						<accordion-group ng-repeat="criteriaName in filters" heading="{{criteriaName.displayLabel}}">
+							<div ng-repeat="(option,val) in criteriaName.values">
+								<input type="checkbox" ng-model="criteriaName.values[option]">&nbsp;{{option}}<br/>
+							</div>
+						</accordion-group>
+					</accordion>
 				</div>
 				<div class="tab-content col-lg-9 " style="padding-left:0px">
 					<div id="vehicles_map" class="tab-pane col-lg-12 ">

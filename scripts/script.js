@@ -1,4 +1,4 @@
-var scotchApp = angular.module('scotchApp', ['ngRoute']);
+var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 
 	// configure our routes
 	scotchApp.config(function($routeProvider) {
