@@ -95,13 +95,19 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 		$scope.reloadMap = function(){
 			var queryString = buildQueryString($scope, "vehicles.html");
 			document.getElementById('vframe').src = queryString;
+			console.log("query string for vehicles is " + queryString);
 			
 			var queryString = buildQueryString($scope, "staff.html");
 			document.getElementById('sframe').src = queryString;
+			console.log("query string for staff is " + queryString);
 		}
 		
-		$scope.updateFilters = function(filterVar){
-			$scope.filters = initializeFilters(filterVar);
+		$scope.updateStaffFilters = function(){
+			$scope.filters = initializeFilters(staff);
+		}
+		
+		$scope.updateSalesFilters = function(){
+			$scope.filters = initializeFilters(sales);
 		}
 		
 		//document.getElementById('ia').src = 'vehicles.html';
