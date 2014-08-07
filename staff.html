@@ -118,14 +118,30 @@
                     var latitude   = results.features[i].properties.latitude ;
                     var longitude  = results.features[i].properties.longitude ;
                     var latLng  = new google.maps.LatLng(latitude,longitude);
+
+                    pushPinToMap = true ;
+        
+                    if (typeof QueryString.city != 'undefined')
+                    {
+                      // use escape() to include city with spaces BATON%20ROUGE
+                      if (QueryString.city.indexOf(escape(city)) < 0)
+                      {
+                        pushPinToMap = false ;
+                      }
+                    }
                   
-                    var marker  = new google.maps.Marker({
-                                    position: latLng,
-                                    map: map,
-                                    title: averyLabel,
-                                    icon : icon
-                                  });
-					          markers.push(marker);
+                    if (pushPinToMap)
+                    {
+
+                      var marker  = new google.maps.Marker({
+                                      position: latLng,
+                                      map: map,
+                                      title: averyLabel,
+                                      icon : icon
+                                    });
+                      markers.push(marker);
+                    }
+
 /*
       		  		  	google.maps.event.addListener(marker, 'click', function() {
 		        		      infowindow.open(map,marker);
