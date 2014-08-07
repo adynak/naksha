@@ -23,14 +23,6 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 			});
 	});
 	
-	var reloadMap = function($scope){
-		var queryString = buildQueryString($scope, "sales.html");
-		
-		document.getElementById('ia').src = queryString;
-		
-	
-	}
-	
 	var initializeFilters = function(filterList)
 	{
 		var filterDefault={};
@@ -85,17 +77,34 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 		
 	}
 	
+	var hasClass = function(id, className){
+		if(document.getElementById(id).className.split(" ").indexOf(className) > -1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 	// create the controller and inject Angular's $scope
 	scotchApp.controller('mainController', function($scope) {
 		// create a message to display in our view
 		$scope.message = 'Everyone come and see how good I look!';
 		//initialize();
+
 		$scope.filters = initializeFilters(sales);
-		
+	
 		$scope.reloadMap = function(){
 			var queryString = buildQueryString($scope, "vehicles.html");
 			document.getElementById('vframe').src = queryString;
+			
+			var queryString = buildQueryString($scope, "staff.html");
+			document.getElementById('sframe').src = queryString;
 		}
+		
+		$scope.updateFilters = function(filterVar){
+			initializeFilters(filterVar)
+		}
+		
 		//document.getElementById('ia').src = 'vehicles.html';
 		
 	});
