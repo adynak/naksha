@@ -61,7 +61,7 @@
 				</div>
 			</div>
 			<div id="main_content" class="row">
-				<div id="filter" class="col-lg-3" class="nav nav-pils nav-stacked">
+				<div id="filter" class="col-lg-3" class="nav nav-pils nav-stacked" style="padding-right:0px;">
 					<!--<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>-->
 					<accordion>
 						<accordion-group ng-repeat="criteriaName in filters" heading="{{criteriaName.displayLabel}}">
@@ -70,7 +70,9 @@
 							</div>
 						</accordion-group>
 					</accordion>
-					<button ng-click="reloadMap()" class="btn-lg btn-primary ">Reload</button>
+					<div>
+					<button ng-click="reloadMap()" class="btn-block btn-primary text-center " style="margin: 0px 20px; padding:10px auto;">Reload</button>
+					</div>
 				</div>
 				<div class="tab-content col-lg-9 " style="padding-left:0px">
 					<div id="vehicles_map" class="tab-pane col-lg-12 ">
