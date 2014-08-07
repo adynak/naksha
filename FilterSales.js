@@ -44,5 +44,10 @@ var sales =
 "displayLabel":"Price",
 	"values":["50,000.00","40,000.00","30,000.00","20,000","10,000","5,000","0"
 	]
+},
+"newUsed":{
+"displayLabel":"New or Used",
+	"values":["NEW","USED"
+	]
 }
 }
