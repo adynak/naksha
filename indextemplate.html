@@ -15,7 +15,9 @@
 
 	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
 	  <script src="FilterSales.js"></script>
-	  <script src="FilterStaff.js"></script>
+	  <script src="FilterStaff.js"></script>  
+	  
+	  
 	</head>
 
 	<header>
@@ -84,7 +86,7 @@
 						</accordion-group>
 					</accordion>
 					<div >
-						<div class="col-md-12 container-fixed" style="margin-bottom:25px">
+						<div class="col-md-12 container-fixed" id="all-btn-box" style="margin-bottom:25px">
 						<button id="filter-all-btn-select-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;">Select All</button>
 						<button id="filter-all-btn-clear-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;">Clear All</button>
 						</div>
@@ -92,7 +94,7 @@
 
 					</div>
 				</div>
-				<div class="tab-content col-md-9 " style="padding-left:0px">
+				<div id="content_map_div" class="tab-content col-md-9 " style="padding-left:0px">
 					<div id="vehicles_map" class="tab-pane col-md-12 ">
 						<iframe id='vframe' src="vehicles.html" style="width:100%; height:92%;"> </iframe>
 					</div>

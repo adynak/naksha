@@ -6203,3 +6203,28 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+
+@media (max-width:1000px){
+	#site_title {
+		display:none !important;	
+	}
+	#main_page{
+		min-width:100% !important;
+	}
+	#main_content{
+		margin-right:0px;
+	
+	}
+	#employees_map , #vehicles_map{
+		padding-right:0px;
+	
+	}
+	.ng-binding .ng-scope {
+		
+	}
+	#content_map_div{
+		padding-right:0px;
+	}
+	
+}
+
