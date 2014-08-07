@@ -78,7 +78,7 @@
 								<button class="filter-btn-clear-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 20px;">Select None</button>
 							</div>
 							<div ng-repeat="(option,val) in criteriaName.values">
-								<input type="checkbox" ng-model="criteriaName.values[option]">&nbsp;{{option}}<br/>
+								<input type="checkbox" ng-model="criteriaName.values[option]"><span ng-click="criteriaName.values[option]=!criteriaName.values[option]">&nbsp;{{option}}</span><br/>
 							</div>
 							
 						</accordion-group>
