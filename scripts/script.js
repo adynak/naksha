@@ -37,7 +37,6 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 				filterDefault[data]["values"][filterList[data]["values"][index]] = true; 	
 			}
 		}
-		console.log(filterDefault);
 		return filterDefault;	
 	}
 	
@@ -102,7 +101,7 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 		}
 		
 		$scope.updateFilters = function(filterVar){
-			initializeFilters(filterVar)
+			$scope.filters = initializeFilters(filterVar);
 		}
 		
 		//document.getElementById('ia').src = 'vehicles.html';
