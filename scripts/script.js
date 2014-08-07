@@ -23,6 +23,14 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 			});
 	});
 	
+	var reloadMap = function($scope){
+		var queryString = buildQueryString($scope, "sales.html");
+		
+		document.getElementById('ia').src = queryString;
+		
+	
+	}
+	
 	var initializeFilters = function(filterList)
 	{
 		var filterDefault={};
@@ -83,6 +91,12 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 		$scope.message = 'Everyone come and see how good I look!';
 		//initialize();
 		$scope.filters = initializeFilters(sales);
+		
+		$scope.reloadMap = function(){
+			var queryString = buildQueryString($scope, "vehicles.html");
+			document.getElementById('ia').src = queryString;
+		}
+		//document.getElementById('ia').src = 'vehicles.html';
 		
 	});
 

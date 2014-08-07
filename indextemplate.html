@@ -70,13 +70,14 @@
 							</div>
 						</accordion-group>
 					</accordion>
+					<button ng-click="reloadMap()">Reload</button>
 				</div>
 				<div class="tab-content col-lg-9 " style="padding-left:0px">
 					<div id="vehicles_map" class="tab-pane col-lg-12 ">
-						<iframe src="vehicles.html" style="width:100%; height:92%;"> </iframe>
+						<iframe id='vframe' src="vehicles.html" style="width:100%; height:92%;"> </iframe>
 					</div>
 					<div id="employees_map" class="tab-pane col-lg-12">
-						<iframe src="staff.html" style="width:100%; height:92%;"> </iframe>
+						<iframe id='sframe' src="staff.html" style="width:100%; height:92%;"> </iframe>
 					</div>
 				</div>
 			</div>
