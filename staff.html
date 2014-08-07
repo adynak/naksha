@@ -94,13 +94,21 @@
                                     title: averyLabel,
                                     icon : icon
                                   });
-					markers.push(marker);
-
-		  		  	google.maps.event.addListener(marker, 'click', function() {
-		  		      infowindow.open(map,marker);
-				});
+					          markers.push(marker);
+/*
+      		  		  	google.maps.event.addListener(marker, 'click', function() {
+		        		      infowindow.open(map,marker);
+				            });
+*/
                 }
-//                AutoCenter() ;
+
+                if (typeof QueryString.center != 'undefined')
+                {
+                    if (QueryString.center)
+                    {
+                      AutoCenter() ;
+                    }
+                }
             }
         </script>
     </head>

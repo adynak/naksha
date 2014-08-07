@@ -239,7 +239,14 @@
 						markers.push(marker);
 					}
                 }
-//                AutoCenter() ;
+
+				if (typeof QueryString.center != 'undefined')
+				{
+	                if (QueryString.center)
+    	            {
+						AutoCenter() ;
+					}
+				}
             }
         </script>
     </head>
