@@ -70,16 +70,16 @@
 							{{criteriaName.displayLabel}}
 								<i class="pull-right glyphicon"
 								ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-								</div>
+							</div>
 							</accordion-heading>
-								<div>
-									<button class="btn-block btn-primary text-center " style="margin: 0px 20px; padding:10px auto;">Select All</button>
-									<button class="btn-block btn-primary text-center " style="margin: 0px 20px; padding:10px auto;">Select None</button>
-								
-									<div ng-repeat="(option,val) in criteriaName.values">
-										<input type="checkbox" ng-model="criteriaName.values[option]">&nbsp;{{option}}<br/>
-									</div>
-								</div>
+							<div class ="col-lg-12 center-block">
+								<button class="btn-sm btn-primary text-center col-lg-offset-2 col-lg-3" style="margin: 0px 20px; padding:10px auto;">Select All</button>
+								<button class="btn-sm btn-primary text-center col-lg-offset-2 col-lg-3" style="margin: 0px 20px; padding:10px auto;">Select None</button>
+							</div>
+							<div ng-repeat="(option,val) in criteriaName.values">
+								<input type="checkbox" ng-model="criteriaName.values[option]">&nbsp;{{option}}<br/>
+							</div>
+							
 						</accordion-group>
 					</accordion>
 					<div>
