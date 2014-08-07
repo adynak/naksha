@@ -1,23 +1,109 @@
-<!DOCTYPE html>
-<html>
+<html ng-app="scotchApp">
 	<head>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-		<meta charset="utf-8">
+	  <!-- SCROLLS -->
+	  <!-- load bootstrap and fontawesome via CDN -->
+	  <link rel="stylesheet" href="css/bootstrap.css" />
+	  <link rel="stylesheet" type="text/css" href="css/cyborg_theme.css">
+	  <!-- SPELLS -->
+	  <!-- load angular via CDN -->
+	  <script src="scripts/angular.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	  <script src="scripts/script.js"></script>
+	  <script src="scripts/bootstrap.js"></script>
+	  <script src="scripts/jq.js"></script>
+	  <script src="scripts/ui-bootstrap-tpls-0.11.0.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="css/geo.css">
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		<script src="scripts/geoUtils.js"></script>
-
-		<title>Naksha Services</title>
-
+	  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+	  <script src="FilterSales.js"></script>
+	  <script src="FilterStaff.js"></script>
 	</head>
-	<body>
-		<div id="panel">
-			<!-- filter code here -->	
-		</div>
 
-		<div id="map-canvas">
-			<!-- google map appears here -->			
+	<header>
+	
+	</header>
+	<!-- define angular controller -->
+	<body ng-controller="mainController" >
+		<div id="splash_page" class="col-md-12">
+	
+			<div id="splash_map" class="col-md-8 text-center col-md-offset-2" style="background: rgba(0,0,0,0) url('images/us_map.gif') no-repeat 50% 0%; padding:430px 0 30px 0; height:50%;">
+				
+				<h1 id="naksha_title">
+				NAKSHA
+				</h1>
+			</div>
+		
+			<div id="splash_buttons" class="col-md-12" style="padding:5% 0 0 0; height:50%;">
+			
+				<div id="vehicle_btn" class="col-md-2 text-center col-md-offset-3 btn btn-md btn-primary" ng-click="updateSalesFilters()" >
+					<img src="images/car_BW_icon.png" class="img-rounded" width="100" height="100" >
+					<h3 id="map_1">
+					Vehicles
+					</h3>
+				</div>
+			
+				<div id="employee_btn" class="col-md-2 text-center col-md-offset-2 btn btn-md btn-primary" ng-click="updateStaffFilters()">
+					<img src="images/person_icon.png" class="img-rounded" width="100" height="100">
+					<h3 id="map_2">
+					Employees
+					</h3>
+				</div>
+			</div>
+		</div>
+		<div id="main_page" class="hidden" style="margin-top:7px; min-width:1600px;">
+			<div id="main_nav" class="row" >
+				<div id="site_title" class="col-md-3 label" style="padding:6px 0px; font-size:30px; background-color:#2A9FD6; border-radius:0px 15px 0px 0px;  ">
+				Naksha
+				</div>
+				<div class="tabbable col-md-9" style="padding-left:0px">
+					<ul class="nav nav-tabs" style="border-bottom-width:0px;">
+						<li id="vehicle_map_tab" class="col-md-4" ng-click="updateSalesFilters()"><a href="#vehicles_map" data-toggle="tab">Vehicles</a></li>
+						<li id="employee_map_tab" class="col-md-4" ng-click="updateStaffFilters()"><a href="#employees_map" data-toggle="tab">Employees</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="main_content" class="row">
+				<div id="filter" class="col-md-3" class="nav nav-pils nav-stacked" style="padding-right:0px; margin-top:5px;">
+					<!--<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>-->
+					<accordion>
+						<accordion-group is-open="isopen" ng-repeat="criteriaName in filters">
+							<accordion-heading ng-click="isopen=!isopen">
+							<div>
+							{{criteriaName.displayLabel}}
+								<i class="pull-right glyphicon"
+								ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+							</div>
+							</accordion-heading>
+							<div class ="col-md-12 container-fixed" style="padding:0px 0px 5px 0px"> 
+								<button class="filter-btn-select-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 55px;" ng-click="setOne(criteriaName,true)">Select All</button>
+								<button class="filter-btn-clear-all btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="margin: 0px 20px;" ng-click="setOne(criteriaName,false)">Select None</button>
+							</div>
+							<div ng-repeat="(option,val) in criteriaName.values">
+								<input type="checkbox" ng-model="criteriaName.values[option]"><span ng-click="criteriaName.values[option]=!criteriaName.values[option]">&nbsp;{{option}}</span><br/>
+							</div>
+							
+						</accordion-group>
+					</accordion>
+					<div >
+						<div class="col-md-12 container-fixed" style="margin-bottom:25px">
+						<button id="filter-all-btn-select-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;" ng-click="setAll(true)">Select All</button>
+						<button id="filter-all-btn-clear-all" class="btn-sm btn-primary text-center col-md-offset-2 col-md-3" style="padding:10px;" ng-click="setAll(false)">Clear All</button>
+						</div>
+					<button ng-click="reloadMap()" class="btn-block btn-primary text-center " style="padding:10px;">Update Map</button>
+
+					</div>
+				</div>
+				<div class="tab-content col-md-9 " id="content_map_div" style="padding-left:0px">
+					<div id="vehicles_map" class="tab-pane col-md-12 ">
+						<iframe id='vframe' src="vehicles.html" style="width:100%; height:92%;"> </iframe>
+					</div>
+					<div id="employees_map" class="tab-pane col-md-12">
+						<iframe id='sframe' src="staff.html" style="width:100%; height:92%;"> </iframe>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</body>
+
 </html>
+ 
