@@ -65,10 +65,12 @@
 					<!--<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>-->
 					<accordion>
 						<accordion-group is-open="isopen" ng-repeat="criteriaName in filters">
-							<accordion-heading>
+							<accordion-heading ng-click="isopen=!isopen">
+							<div>
 							{{criteriaName.displayLabel}}
 								<i class="pull-right glyphicon"
 								ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+								</div>
 							</accordion-heading>
 							<div ng-repeat="(option,val) in criteriaName.values">
 								<input type="checkbox" ng-model="criteriaName.values[option]">&nbsp;{{option}}<br/>
