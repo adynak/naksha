@@ -13,4 +13,7 @@ $(document).ready(function(){
 		$("#employees_map").addClass("active");
 	});
 
+	$(".filter-btn-select-all").click(function(){
+		$self.parent().siblings().children("input").prop('checked',true);
+	});
 });
