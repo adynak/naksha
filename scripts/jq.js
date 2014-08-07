@@ -14,6 +14,18 @@ $(document).ready(function(){
 	});
 
 	$(".filter-btn-select-all").click(function(){
-		$self.parent().siblings().children("input").prop('checked',true);
+		$(this).parent().siblings().children("input").prop('checked',true);
+	});
+	
+	$(".filter-btn-select-none").click(function(){
+		$(this).parent().siblings().children("input").prop('checked', false);
+	});
+	
+	$("#filter-all-btn-select-all").click(function(){
+		$(document).find("input").prop('checked', true);
+	});
+	
+	$("#filter-all-btn-clear-all").click(function(){
+		$(document).find("input").prop('checked', false);
 	});
 });
