@@ -41,7 +41,7 @@ var scotchApp = angular.module('scotchApp', ['ngRoute','ui.bootstrap']);
 	}
 	
 	var buildQueryString = function($scope,pageToCall){
-		var url = 'http://127.0.0.1/naksha/'+pageToCall+'?center=true&';
+		var url = pageToCall+'?center=true&';
 	
 		for(criteria in $scope.filters){
 			var valCount = Object.keys($scope.filters[criteria]['values']).length;
