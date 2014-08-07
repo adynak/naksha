@@ -12,7 +12,37 @@
         
             var map;
             var markers = new Array();
-
+            
+            
+            var QueryString = function ()
+			{
+  				// This function is anonymous, is executed immediately and 
+				// the return value is assigned to QueryString!
+  				var query_string = {};
+				var query = window.location.search.substring(1);
+				var vars = query.split("&");
+				for (var i=0;i<vars.length;i++) 
+				{
+					var pair = vars[i].split("=");
+			    	// If first entry with this name
+    				if (typeof query_string[pair[0]] === "undefined")
+    				{
+						query_string[pair[0]] = pair[1];
+				    	// If second entry with this name
+					}
+					else if (typeof query_string[pair[0]] === "string")
+					{
+						var arr = [ query_string[pair[0]], pair[1] ];
+						query_string[pair[0]] = arr;
+				    	// If third or later entry with this name
+					}
+					else
+					{
+						query_string[pair[0]].push(pair[1]);
+					}
+				} 
+    			return query_string;
+			} ();
 
 			function AutoCenter()
 			{
@@ -63,7 +93,8 @@
                 map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
                 var script = document.createElement('script');
-                script.src = 'http://127.0.0.1/NAKSHA/vehicles.json';  
+// note that we're using vehicles-all.json here                
+                script.src = 'http://127.0.0.1/NAKSHA/vehicles-all.json';  
                 document.getElementsByTagName('head')[0].appendChild(script);
              }
 
@@ -80,24 +111,132 @@
                     var averyLabel = name + "\r\n" + address + "\r\n" + city + ", " + state + ' ' + postalCode ;
                     var year       = results.features[i].properties.year ;
                     var make       = results.features[i].properties.make ; 
-                    var model      = results.features[i].properties.model ;   
+                    var model      = results.features[i].properties.model ; 
+                    var dealType   = results.features[i].properties.dealType ; 
+                    var financed   = results.features[i].properties.financed ; 
+                    var newUsed    = results.features[i].properties.newUsed ; 
+                    var price      = results.features[i].properties.price ; 
                     var vehicle    = year + ' ' + make + ' ' + model ;       
-                    var hoverHelp = averyLabel + "\r\n\r\n" + vehicle ;                              
+                    var hoverHelp = averyLabel + "\r\n\r\n" + vehicle + "\r\n" + price ;                              
                     var icon       = 'images/' + results.features[i].properties.icon ;
                     var latitude   = results.features[i].properties.latitude ;
                     var longitude  = results.features[i].properties.longitude ;
                     var latLng  = new google.maps.LatLng(latitude,longitude);
-                    console.log(name) ;
-                  
-                    var marker  = new google.maps.Marker({
-                                    position: latLng,
-                                    map: map,
-                                    title: hoverHelp,
-                                    icon : icon
-                                  });
-					markers.push(marker);
 
-                  
+					pushPinToMap = true ;
+				
+					if (typeof QueryString.city != 'undefined')
+					{
+						// use escape() to include city with spaces BATON%20ROUGE
+	                  	if (QueryString.city.indexOf(escape(city)) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+
+					if (typeof QueryString.state != 'undefined')
+					{
+	                  	if (QueryString.state.indexOf(state) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+		
+					if (typeof QueryString.postalCode != 'undefined')
+					{
+	                  	if (QueryString.postalCode.indexOf(postalCode) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+
+					if (typeof QueryString.year != 'undefined')
+					{
+	                  	if (QueryString.year.indexOf(year) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+
+					if (typeof QueryString.make != 'undefined')
+					{
+	                  	if (QueryString.make.indexOf(make) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+					
+					if (typeof QueryString.model != 'undefined')
+					{
+	                  	if (QueryString.model.indexOf(model) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+					
+					if (typeof QueryString.dealType != 'undefined')
+					{
+	                  	if (QueryString.dealType.indexOf(dealType) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+					
+					if (typeof QueryString.financed != 'undefined')
+					{
+	                  	if (QueryString.financed.indexOf(financed) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+
+					if (typeof QueryString.newUsed != 'undefined')
+					{
+	                  	if (QueryString.newUsed.indexOf(newUsed) < 0)
+    	              	{
+        	            	pushPinToMap = false ;
+						}
+					}
+// start code for price range					
+					doPriceRangeFilter = false ;
+					if (typeof QueryString.minPrice != 'undefined')
+					{
+						doPriceRangeFilter = true ;
+					}
+					
+					if (typeof QueryString.maxPrice != 'undefined')
+					{
+						doPriceRangeFilter = true ;
+					}
+					
+					if (doPriceRangeFilter)
+					{
+						price = price.replace(/\$/g,'');
+						price = price.replace(/\,/g,'');
+						price = Math.round(price) ;
+						
+						if ((price >= QueryString.minPrice) && (price <= QueryString.maxPrice))
+						{
+//							pushPinToMap = true ;
+						}
+						else
+						{
+							pushPinToMap = false ;
+
+						}
+					}
+// end code for price range					
+
+					if (pushPinToMap)
+					{
+						var marker  = new google.maps.Marker({
+            	            	            position: latLng,
+                	            	        map: map,
+                    	            	    title: hoverHelp,
+                        	            	icon : icon
+                            	      	});
+						markers.push(marker);
+					}
                 }
                 AutoCenter() ;
             }
