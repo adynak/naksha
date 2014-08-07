@@ -54,14 +54,14 @@
 				Naksha
 				</div>
 				<div class="tabbable col-lg-9" style="padding-left:0px">
-					<ul class="nav nav-tabs">
+					<ul class="nav nav-tabs" style="border-bottom-width:0px;">
 						<li id="vehicle_map_tab" class="col-lg-4"><a href="#vehicles_map" data-toggle="tab">Vehicles</a></li>
 						<li id="employee_map_tab" class="col-lg-4"><a href="#employees_map" data-toggle="tab">Employees</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="main_content" class="row">
-				<div id="filter" class="col-lg-3" class="nav nav-pils nav-stacked" style="padding-right:0px;">
+				<div id="filter" class="col-lg-3" class="nav nav-pils nav-stacked" style="padding-right:0px; margin-top:5px;">
 					<!--<div ng-repeat="(city,val) in filters.city.values"> {{city}}</div>-->
 					<accordion>
 						<accordion-group is-open="isopen" ng-repeat="criteriaName in filters">
@@ -76,7 +76,7 @@
 						</accordion-group>
 					</accordion>
 					<div>
-					<button ng-click="reloadMap()" class="btn-block btn-primary text-center " style="margin: 0px 20px; padding:10px auto;">Reload</button>
+					<button ng-click="reloadMap()" class="btn-block btn-primary text-center " style="padding:10px;">Reload</button>
 					</div>
 				</div>
 				<div class="tab-content col-lg-9 " style="padding-left:0px">
