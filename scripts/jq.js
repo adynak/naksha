@@ -17,7 +17,7 @@ $(document).ready(function(){
 		$(this).parent().siblings().children("input").prop('checked',true);
 	});
 	
-	$(".filter-btn-select-none").click(function(){
+	$(".filter-btn-clear-all").click(function(){
 		$(this).parent().siblings().children("input").prop('checked', false);
 	});
 	
