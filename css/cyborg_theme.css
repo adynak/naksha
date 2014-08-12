@@ -893,7 +893,7 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #888888;
+  color: #FFFFFF;
   background-color: #060606;
 }
 input,
@@ -4997,7 +4997,7 @@ a.list-group-item-danger.active:focus {
   color: inherit;
 }
 .panel-title > a {
-  color: inherit;
+  color: #FFFFFF;
 }
 .panel-footer {
   padding: 10px 15px;
